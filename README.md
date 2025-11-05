@@ -8,19 +8,19 @@ A backend service built with **FastAPI** that demonstrates integration of AI rea
 1. The backend exposes a single endpoint:
    
 
-**Request Example:**
+# Request Example:
 ```json
 {
   "question": "What is the weather in mumbai today?"
 }
 
-**Response Example:**
+# Response Example:
 {
 "reasoning": "Detected a weather-related question?",
 "answer": "the weather in mumbai is haze with 27.99 degree celcius temperature."
 }
 
-**APIs Used**
+# APIs Used
 
 | API                         | Purpose                                   |
 | --------------------------- | ----------------------------------------- |
@@ -28,27 +28,27 @@ A backend service built with **FastAPI** that demonstrates integration of AI rea
 | Wikipedia API               | Get factual summaries for questions       |
 
 
-**How to Run**
+# How to Run
 
 Clone the repository
 git clone https://github.com/Jyoti-354/fastapi_ai_agent.git
 cd fastapi_ai_agent
 
-**Create a virtual environment**
+# Create a virtual environment
 python -m venv venv
 source venv/bin/activate  # Linux / Mac
 venv\Scripts\activate     # Windows
 
-**Install dependencies**
+# Install dependencies
 pip install -r requirements.txt
 
-**main.py**
+# main.py
 OPENWEATHER_API_KEY=your_openweathermap_api_key
 
-**Run the FastAPI server**
+# Run the FastAPI server
 uvicorn main:app --reload
 
-**Test the API**
+# Test the API
 POST a request to http://127.0.0.1:8000/docs
 
 click on ask/ endpoint
@@ -57,7 +57,7 @@ write your question
 click on excute you will see your answer
 
 
-**Example**:
+# Example:
 {
   "question": "What's the weather in Mumbai today?"
 }
@@ -66,4 +66,5 @@ Response Example:
 "reasoning": "Detected a weather-related question?",
 "answer": "the weather in mumbai is haze with 27.99 degree celcius temperature."
 }
+
 
