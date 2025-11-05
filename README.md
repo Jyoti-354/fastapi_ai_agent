@@ -1,10 +1,13 @@
 ## FastAPI AI Agent A backend service built with **FastAPI** that demonstrates integration of AI reasoning with external API tools like **weather** and **Wikipedia lookups**. 
 
-## How the Solution Works 1. The backend exposes a single endpoint:
+## How the Solution Works
+
+1. The backend exposes a single endpoint:
 
 # Request Example:
 
 json
+
 {
   "question": "What is the weather in mumbai today?"
 }
@@ -75,6 +78,7 @@ Response Example:
 "reasoning": "Detected a weather-related question?",
 "answer": "the weather in mumbai is haze with 27.99 degree celcius temperature."
 }
+
 
 
 
