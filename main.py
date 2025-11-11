@@ -11,9 +11,24 @@ class QueryRequest(BaseModel):
     question: str
 
 
+# def get_weather(city: str):
+#     api_key = os.getenv("OPENWEATHER_API_KEY")
+    
+def extract_city(query: str):
+    # Try to extract city name from query using regex patterns
+    match = re.search(r"in\s+([a-zA-Z\s]+)", query)
+    if match:
+        city = match.group(1).strip().replace("today", "").replace("weather", "").strip()
+        return city
+    return query.strip()
+    
 # ✅ WEATHER FUNCTION
-def get_weather(city: str):
+def get_weather(query: str):
     api_key = os.getenv("OPENWEATHER_API_KEY")
+    city = extract_city(query) 
+    if not api_key:
+        return "API key not found. Please set it in environment variables."
+
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
 
     response = requests.get(url)
@@ -61,7 +76,7 @@ async def ask_question(request: QueryRequest):
             city = words[-1] if len(words) > 1 else ""
 
         if city:
-            answer = get_weather(city)
+            answer = get_weather(question)
         else:
             answer = "Please specify a city name to get weather information."
 
@@ -76,4 +91,5 @@ async def ask_question(request: QueryRequest):
         answer = "I can currently answer questions about the weather or general facts."
 
     return {"reasoning": reasoning, "answer": answer}
+
 
