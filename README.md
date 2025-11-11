@@ -1,5 +1,12 @@
 ## FastAPI AI Agent A backend service built with **FastAPI** that demonstrates integration of AI reasoning with external API tools like **weather** and **Wikipedia lookups**. 
 
+## 🚀 Live Demo
+
+You can test the deployed FastAPI AI Agent here:  
+🔗 **Render Deployment:** https://fastapi-ai-agent-l0on.onrender.com/docs
+try out the `/ask` endpoint directly.
+
+
 ## How the Solution Works
 
 1. The backend exposes a single endpoint:
@@ -78,6 +85,7 @@ Response Example:
 "reasoning": "Detected a weather-related question?",
 "answer": "the weather in mumbai is haze with 27.99 degree celcius temperature."
 }
+
 
 
 
