@@ -54,7 +54,9 @@ pip install -r requirements.txt
 
 ## main.py
 
-OPENWEATHER_API_KEY=your_openweathermap_api_key
+api_key = os.getenv("OPENWEATHER_API_KEY")
+replace with
+api_key = "your_openweathermap_api_key"
 
 ## Run the FastAPI server
 
@@ -85,6 +87,7 @@ Response Example:
 "reasoning": "Detected a weather-related question?",
 "answer": "the weather in mumbai is haze with 27.99 degree celcius temperature."
 }
+
 
 
 
