@@ -3,6 +3,7 @@ from pydantic import BaseModel
 import requests
 import wikipedia
 import re  # 👈 Added for flexible city name extraction
+import os
 
 app = FastAPI()
 
@@ -12,7 +13,7 @@ class QueryRequest(BaseModel):
 
 # ✅ WEATHER FUNCTION
 def get_weather(city: str):
-    api_key = "your_api_key"
+    api_key = os.getenv("OPENWEATHER_API_KEY")
     url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
 
     response = requests.get(url)
@@ -75,3 +76,4 @@ async def ask_question(request: QueryRequest):
         answer = "I can currently answer questions about the weather or general facts."
 
     return {"reasoning": reasoning, "answer": answer}
+
